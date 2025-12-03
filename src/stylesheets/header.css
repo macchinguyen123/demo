@@ -1,0 +1,261 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Inter Fallback, Arial, sans-serif;
+}
+
+/* ==== WRAPPER ==== */
+.header-wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: contents;
+}
+
+/* ==== HEADER TRÊN ==== */
+.header-bg {
+    background: linear-gradient(180deg, #0051c6, #0073ff);
+    color: white;
+    width: 100%;
+    padding: 8px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: sticky; /* <<< chính là dòng này */
+    top: 0; /* dính lên đầu */
+    z-index: 199;
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+/* ==== LOGO ==== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.logo h2 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+    color: white;
+}
+
+/* ==== THANH TÌM KIẾM ==== */
+.search-bar {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    padding: 6px 12px;
+    max-width: 500px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+}
+
+.search-bar:hover {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar i {
+    color: #0073ff;
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    background: transparent;
+}
+
+/* ==== HÀNH ĐỘNG HEADER ==== */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* ==== ICON BUTTON ==== */
+.icon-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    user-select: none;
+}
+
+.icon-btn i {
+    font-size: 18px;
+}
+
+.icon-btn span {
+    font-size: 14px;
+}
+
+.icon-btn:hover {
+    background: linear-gradient(135deg, #0051c6, #0073ff);
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.icon-btn.active {
+    background: linear-gradient(135deg, #0051c6, #0073ff);
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: white solid 1px;
+}
+
+/* ==== MENU DƯỚI ==== */
+.menu-bg {
+    background-color: #ffffffcc;
+    backdrop-filter: blur(6px);
+    width: 100%;
+    padding: 6px 0;
+    border-top: 2px solid #e5e5e5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 66px;
+    z-index: 99;
+
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.nav-item {
+    background-color: white;
+    color: #0046b5;
+    border: 2px solid #0073ff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.nav-item:hover {
+    background: linear-gradient(135deg, #0051c6, #0073ff);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item.active {
+    background: linear-gradient(135deg, #0051c6, #0073ff);
+    color: white;
+}
+
+/* ==== ICON SIZE ==== */
+.bi {
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+/* ==== MENU TRÁI CẤP 1 ==== */
+.menu-left-1 {
+    display: none;
+    position: absolute;
+    top: 79px;
+    left: 157px;
+    z-index: 1000;
+    width: 260px;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    animation: fadeIn 0.25s ease-in-out;
+    list-style: none;
+    margin: 0; /* xóa khoảng cách mặc định */
+    padding: 0;
+}
+
+.menu-left-1.show {
+    display: flex;
+    list-style: none;
+}
+
+/* Hiệu ứng hiện mượt mà */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-left-1 li {
+    list-style: none;
+    width: 100%; /* chiếm toàn chiều ngang */
+    box-sizing: border-box; /* tính luôn border/padding */
+    padding: 15px 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s;
+    border-radius: 8px;
+    color: black;
+}
+
+.menu-left-1 li:hover {
+    background: #e7f0ff; /* nền hover */
+    padding-left: 24px; /* giữ nguyên để không bị giật */
+    color: #0051c6;
+}
+
+.menu-left-1 .menu-icon {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+ul {
+    list-style: none; /* bỏ chấm tròn mặc định */
+    padding-left: 0; /* bỏ thụt lề mặc định */
+    margin: 0; /* bỏ khoảng cách ngoài */
+}
